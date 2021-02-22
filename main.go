@@ -62,7 +62,7 @@ func run() {
 		if win.Pressed(pixelgl.MouseButtonLeft) && state == viewingState {
 			startPos = win.MousePosition()
 			state = selectingRegionState
-		} else if win.Pressed(pixelgl.MouseButtonLeft) {
+		} else if win.Pressed(pixelgl.MouseButtonLeft) && state == selectingRegionState {
 			imd := imdraw.New(nil)
 			imd.Color = pixel.RGB(1, 1, 1)
 			imd.Push(startPos)
